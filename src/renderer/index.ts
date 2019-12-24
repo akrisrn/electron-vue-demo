@@ -1,13 +1,12 @@
-import {isDevelopment} from '../common/utils';
+import Vue from 'vue';
+import App from './App.vue';
+import router from './router';
+import store from './store';
 
-if (isDevelopment && module.hot) {
-    module.hot.accept();
-}
+Vue.config.productionTip = false;
 
-const app = document.querySelector('#app');
-if (app) {
-    app.innerHTML = `<h1>Hello World!</h1>
-We are using Node.js ${process.versions.node},
-Chromium ${process.versions.chrome},
-and Electron ${process.versions.electron}.`;
-}
+new Vue({
+    router,
+    store,
+    render: h => h(App),
+}).$mount('#app');
