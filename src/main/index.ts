@@ -9,7 +9,7 @@ if (isDevelopment && module.hot) {
 
 let mainWindow: Electron.BrowserWindow | null;
 
-const createMainWindow = (): Electron.BrowserWindow => {
+const createMainWindow = () => {
     const window = new BrowserWindow({
         width: 800,
         height: 600,
