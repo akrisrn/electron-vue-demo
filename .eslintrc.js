@@ -1,20 +1,23 @@
 module.exports = {
-    parserOptions: {
-        parser: '@typescript-eslint/parser',
-        sourceType: 'module',
-    },
-    plugins: [
-        '@typescript-eslint',
-    ],
-    extends: [
-        'plugin:vue/essential',
-        '@vue/typescript',
-    ],
-    env: {
-        browser: true,
-        node: true,
-    },
-    globals: {
-        __static: true,
-    },
+  root: true,
+  extends: [
+    'plugin:vue/essential',
+    'eslint:recommended',
+    '@vue/typescript/recommended',
+  ],
+  parserOptions: {
+    sourceType: 'module',
+    ecmaVersion: 2020,
+  },
+  rules: {
+    'no-console': process.env.NODE_ENV === 'production' ? 'warn' : 'off',
+    'no-debugger': process.env.NODE_ENV === 'production' ? 'warn' : 'off',
+  },
+  env: {
+    browser: true,
+    node: true,
+  },
+  globals: {
+    __static: true,
+  },
 };
